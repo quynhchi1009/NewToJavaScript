@@ -26,8 +26,13 @@ var isConfirm = confirm('Message?')
 console.log(isConfirm)
 
 function cong(a, b) {
-    return a + b;
+    var result = a + b;
+    if(isNaN(result)) {
+        return false;
+    }
+    return result;
 }
+
 function cong(a, b) {
     return a - b;
 }

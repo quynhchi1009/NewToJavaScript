@@ -23,3 +23,6 @@ var myString = age.toString()
 console.log(PI.toFixed()) //lam tron thanh so nguyen, chuyen Pi thanh String
 console.log(PI.toFixed(3))//lay 2 so sau dau phay
 
+//kiem tra số nguyên dương
+var number = 10
+var result = Number.isInteger(number) && (number > 0)

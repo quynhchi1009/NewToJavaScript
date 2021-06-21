@@ -64,3 +64,63 @@ console.log(Object.values(myInfo)) //tra ve 1 mang ['Quynh Chi', '21', 'Hanoi, v
 for (var value of Object.values(myInfo)) {
     console.log(value) //Quynh Chi, 21, Hanoi, Vietnam
 }
+
+//while loop
+var i = 0
+while (i < 10) {
+    i++
+    console.log(i)
+}
+
+/* do, while loop
+kiểm tra đk từ lần 2
+*/
+do {
+    i++
+    console.log(i)
+} while (i < 10)
+
+var isSuccess = false
+do {
+    i++
+    console.log('Nap the lan' + i)
+    if (true) {
+        isSuccess = true
+    }
+} while (!isSuccess && i < 3)
+
+
+//break -> thoat khoi vong lap
+//continue -> bo qua nhung dong tiep theo, chay 1 vong lap moi
+for (var i = 0; i < 10; i++) {
+    console.log(i)
+    if (i >= 5) {
+        break
+    }
+}
+//in ra so chan
+for (var i = 0; i < 10; i++) {
+    if (i % 2 !== 0) {
+        continue
+    }
+    console.log(i)
+}
+
+//nested loop
+var myArray = [
+    [1,2], [3,4], [5,6]
+]
+for (var i = 0; i < myArray.length; i++) {
+    for (var j = 0; i < myArray[j].length; j++) {
+        console.log(myArray[i][j]) //1,2,3,4,5,6
+    }
+}
+
+//in ra gia tri tu 100 den 1
+for (var i = 100; i > 1; i--) {
+    console.log(i)
+}
+//in ra gia tri cach nhau 5 don vi
+for (var i = 0; i <= 100; i+=5) {
+    console.log(i)
+}

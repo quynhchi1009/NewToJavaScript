@@ -11,7 +11,8 @@ var isSuccess = true
 console.log(Boolean(1)) // true
 console.log(Boolean(['BMW'])) // true
 console.log(Boolean({ name: 'Miu' })) // true
-//!! la khang dinh. Day la 1 cach chuyen datatype sang boolean
+//Convert to Boolean: !!value
+//convert to number: function (value) {return Number(value)}
 //*Truthy boolean
 console.log(!!'hi') // true. 
 console.log('0') //(một chuỗi chứa số không)

@@ -79,3 +79,14 @@ console.log('${day}/ ${month}/ ${year}')
 //                            date.getSeconds()
 
 
+// Đối tượng trong mảng
+var book = [
+    {name:'foreword', pageCount: 14},
+    {name:'boyWhoLived', pageCount: 18},
+    {name:'vanishingGlass', pageCount: 13},
+    {name:'lettersFromNoOne', pageCount: 17},
+    {name:'afterword', pageCount: 19}
+]; 
+book[1]['pageCount']
+  // book[1] lấy ra đối tượng thứ hai trong mảng {name:'boyWhoLived', pageCount: 18}
+  // book[1]['pageCount'] lấy ra giá trị của thuộc tính 'pageCount' của book[1]

@@ -16,8 +16,8 @@ var a = 69
 var b = --a
 console.log(a, b) //68, 68
 
-//=== khac == vi === so sanh ca kieu du lieu
-//!== khac != vi !== so sanh ca kieu du lieu
+//=== khac == vi === so sanh ca kieu du lieu + gia tri
+//!== khac != vi !== so sanh ca kieu du lieu + gia tri
 var a = 1;
 var b = '1'
 console.log(a===b)
