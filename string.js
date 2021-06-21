@@ -45,3 +45,8 @@ console.log(languages.split(', '))
 //get a character by index
 const myString = 'Quynh Chi'
 console.log(myString.charAt(2))
+
+//includes()
+var title = 'Responsive Web design'
+console.log(title.includes('Web')) //true
+console.log(title.includes('Web', 1)) //tim tu vi tri thu 1

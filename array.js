@@ -100,9 +100,17 @@ var courses = [
 courses.forEach(function(course) {
     console.log(course)
 }) 
-courses.forEach(function(course, index) {
-    console.log(index, course)
+courses.forEach(function(course, index, array) {
+    console.log(course, index, array)
 }) 
+Array.prototype.forEach2 = function(callback) {
+    for (var index in this) {
+        console.log('Index:' ,index)
+    }
+}
+courses.forEach2(function(course, index, array) {
+    console.log(course, index, array)
+})
 
 /*
 every(function(name){....}) 
@@ -147,6 +155,7 @@ var rubyCourse = courses.filter(function(course) {
     return course.name === 'Ruby'
 }) 
 console.log(rubyCourse)
+
 
 /* map (function(name){....})
 Thay doi/ Chinh sua 1 phan tu trong day array
@@ -198,6 +207,10 @@ var totalCoin = number.reduce(function (total, number) {
     return total + number
 }) 
 
+function run(courses) {
+    return courses.reduce((total, course) => total + course.coin, 0);
+}
+
 //Flat- lam phang mang tu depth Array
 //neu khong co initial Value thi 1.para se lay gia tri 1 (ko phai arr)
 var depthArray = [1,2,[3,4],5,6,[7,8,9]]
@@ -236,6 +249,11 @@ var newCourses = topics.reduce(function(course, topic){
 }, [])
 
 
+//includes 
+var courses = ['PHP', 'Java', 'JS']
+console.log(courses.includes('JavaScript')) //false
+console.log(courses.includes('JavaScript', 12)) //tim tu vi tri 12
+console.log(courses.includes('JavaScript', -1)) //tim tu vi tri array.length-1
 
 // Đối tượng trong mảng
 var book = [
@@ -250,3 +268,9 @@ book[1]['pageCount']
   // book[1]['pageCount'] lấy ra giá trị của thuộc tính 'pageCount' của book[1]
 
 
+  //empty element of array
+  courses.length = 100 // nhung phan tu con lai se la undefined
+  //-> dung for in
+  for (var index in courses) {
+      console.log(courses[index]) //chi in ra nhung phan tu khong phai la undefined
+  }
