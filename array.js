@@ -97,12 +97,14 @@ var courses = [
 ]
 
 //forEach(function(name){....})
+//Cach 1
 courses.forEach(function(course) {
     console.log(course)
 }) 
 courses.forEach(function(course, index, array) {
     console.log(course, index, array)
 }) 
+//Cach 2
 Array.prototype.forEach2 = function(callback) {
     for (var index in this) {
         console.log('Index:' ,index)
@@ -114,25 +116,58 @@ courses.forEach2(function(course, index, array) {
 
 /*
 every(function(name){....}) 
--> Kiem tra tat ca cac phan tu cua mang Thoa man 1 Dk -> true
+-> Kiem tra tat ca cac phan tu cua mang Thoa man 1 Dk -> return true
 Moi lan lap qua 1 phan tu, se goi nguoc lai function. 
-Neu dk dung se ktra phan tu 2. Neu dk sai, vong lap se dung.
+Neu dk dung se ktra phan tu 2. Neu dk sai, vong lap se dung -> return false
 */
+//Cach 1
 var isFree = courses.every(function(course) {
     return course.coin === 0
 }) 
 console.log(isFree)
+//Cach 2
+Array.prototype.every2(function(callback){
+    var output = true
+    for (var index in this) {
+        if (this.hasOwnProperty(index)) {
+            var result = callback(this[index], index, this)
+            if (!result) {
+                output = false
+                break
+            }
+        }
+    }
+    return output
+})
+var isFree = courses.every2(function(course, index, array) {
+    return course.coin > 500
+}) 
 
 /*
 some(function(name){....}) 
--> Kiem tra 1 phan tu cua mang Thoa man 1 Dk -> true
+-> Kiem tra co min 1 phan tu cua mang Thoa man 1 Dk -> true
 Moi lan lap qua 1 phan tu, se goi nguoc lai function. 
-Neu dk dung se dung lai. Neu dk sai, vong lap se tiep tuc.
+Neu dk dung se dung lai => return true. Neu dk sai, vong lap se tiep tuc.
 */
-var isFree = courses.some(function(course) {
+//Cach 1
+var isFree = courses.some(function(course, index, array) {
     return course.coin === 0
 }) 
 console.log(isFree)
+//Cach 2
+Array.prototype.some2(function(callback) {
+    for (var index in this ) {
+        if (this.hasOwnProperty(index)) {
+            if (callback(this[index], index, this)) {
+                return true
+            }
+        }
+    }
+    return false
+})
+var isFree = courses.some2(function(course, index, array) {
+    return course.coin === 0
+}) 
 
 /* 
 find(function(name){....})
@@ -145,16 +180,34 @@ var rubyCourse = courses.find(function(course) {
 }) 
 console.log(rubyCourse)
 
+
 /*
 filter(function(name){....})
 Lap qua tung phan tu. 
-Neu tim duoc, se return tat ca phan tu tim duoc.
+Neu tim duoc, se return 1 mang bao gom tat ca phan tu tim duoc.
 Neu khong tim duoc, se return UNDEFINDED
 */
+//Cach 1
 var rubyCourse = courses.filter(function(course) {
     return course.name === 'Ruby'
 }) 
 console.log(rubyCourse)
+//Cach 2
+Array.prototype.filter2(function(callback) {
+    var output = []
+    for (var index in this) {
+        if (this.hasOwnProperty(index)) {
+            var result = callback(this[index], index, this)
+            if (result) {
+                output.push(this[index])
+            }
+        }
+    }
+    return output
+})
+var rubyCourse = courses.filter2(function(course, index, array) {
+    return course.name === 'Ruby'
+}) 
 
 
 /* map (function(name){....})
@@ -249,11 +302,13 @@ var newCourses = topics.reduce(function(course, topic){
 }, [])
 
 
+
 //includes 
 var courses = ['PHP', 'Java', 'JS']
 console.log(courses.includes('JavaScript')) //false
 console.log(courses.includes('JavaScript', 12)) //tim tu vi tri 12
 console.log(courses.includes('JavaScript', -1)) //tim tu vi tri array.length-1
+
 
 // Đối tượng trong mảng
 var book = [
