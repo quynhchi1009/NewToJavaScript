@@ -4,7 +4,6 @@ La ham (function) duoc truyen qua doi so khi goi ham khac
 
 function myFunction(parameter){
     console.log(parameter)
-    
 }
 myFunction(234234)
 

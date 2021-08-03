@@ -52,16 +52,15 @@ Khi co nhieu element co class giong nhau -> Hien ra tat ca elements
 
 /*3. qua CSS selector 
         <h1 id = 'heading'>JavaScript Basic</h1>
-    <div class = 'box'>
-        <h2 class = 'heading-2'>HTML DOM</h2>
-        <h2 class = 'heading-2'>HTML DOM</h2>
-        <h2 class = 'heading-2'>HTML DOM</h2>
-        <h2 class = 'heading-2'>HTML DOM</h2>
-    </div>
+        <div class = 'box'>
+                <h2 class = 'heading-2'>HTML DOM</h2>
+                <h2 class = 'heading-2'>HTML DOM</h2>
+                <h2 class = 'heading-2'>HTML DOM</h2>
+                <h2 class = 'heading-2'>HTML DOM</h2>
+        </div>
 Khi co nhieu element co id giong nhau -> Hien ra element dau tien
  */
-// var headingNode = document.querySelector('.heading')
-// console.log(headingNode) //in ra element dau tien 
+// var headingNode = document.querySelector('.heading') //in ra element dau tien 
 // var heading2Node = document.querySelector('.box.heading-2') //in ra element dau tien
 // var firstHeading2Node = document.querySelector('.box.heading-2:first-child')
 // headingNode = document.querySelector('.box.heading-2:nth-child(2)')
@@ -85,10 +84,12 @@ Khi co nhieu element co class giong nhau -> Hien ra tat ca elements
 
 
 //Lấy tag con (tag bên trong) 1 tag
+//CACH 1
 var listItemNodes = document.querySelectorAll('.box1 li')
 console.log(listItemNodes); // in ra NodeList [ li, li ]
 
-//Task1 : sử dụng tới boxNode
+//CACH 2: get node trong DOM: get qua ID, class, tag, CSS selector
+//Task1 : sử dụng tới 'boxNode'
 var boxNodes = document.querySelector('.box1')
 console.log(boxNodes); // in ra <div class="box1">...</div>
 //Task2: sử dụng tới cái li elements là con của '.box1'
